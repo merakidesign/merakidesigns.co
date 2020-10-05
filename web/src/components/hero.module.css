@@ -1,0 +1,22 @@
+@import '../styles/media-queries.css';
+@import './typography.module.css';
+
+.root {
+  @media (--media-min-small) {
+    /* padding: 2em; */
+  }
+}
+
+h3, .h3 {
+  font-size: var(--font-title2-size);
+  font-weight: 400;
+  line-height: var(--font-title1-line-height);
+}
+
+h6, .h6 {
+  color: #6B6B6B;
+  font-size: var(--font-small-size);
+  letter-spacing: 1px;
+  line-height: var(--font-small-line-height);
+  text-transform: uppercase;
+}
