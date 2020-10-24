@@ -15,6 +15,11 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'blockContent'
+    },
+    {
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'mainImage'
     }
   ]
 }

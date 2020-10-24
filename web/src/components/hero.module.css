@@ -2,21 +2,53 @@
 @import './typography.module.css';
 
 .root {
+  margin-bottom: 50px;
+
   @media (--media-min-small) {
-    /* padding: 2em; */
+    padding: 2em;
+  }
+
+  @nest & h3, & .h3 {
+    font-size: var(--font-title2-size);
+    line-height: var(--font-title1-line-height);
+    margin-top: 0;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 44px;
+    letter-spacing: -0.5px;
+  }
+
+  @nest & h6, & .h6 {
+    color: #6B6B6B;
+    font-size: var(--font-small-size);
+    letter-spacing: 1px;
+    line-height: var(--font-small-line-height);
+    text-transform: uppercase;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 1.5px;
   }
 }
 
-h3, .h3 {
-  font-size: var(--font-title2-size);
-  font-weight: 400;
-  line-height: var(--font-title1-line-height);
-}
+.wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 1em;
+  display: grid;
+  
+  grid-gap: 1.5rem;
 
-h6, .h6 {
-  color: #6B6B6B;
-  font-size: var(--font-small-size);
-  letter-spacing: 1px;
-  line-height: var(--font-small-line-height);
-  text-transform: uppercase;
+  @media (--media-min-small) {
+    padding: 3em 0;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 1176px;
+
+    @nest & div {
+      grid-column-start: 3;
+      grid-column-end: 11;
+    }
+  }
 }

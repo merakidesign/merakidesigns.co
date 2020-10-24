@@ -1,6 +1,8 @@
 .root {
   margin: 2rem 0;
   padding: 0;
+  width: 110%;
+  margin-left: -5%;
 
   @nest & img {
     width: 100%;

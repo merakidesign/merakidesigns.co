@@ -19,17 +19,17 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
           <li>
-            <Link to='/about/'>About</Link>
+            <Link to='/about/' activeStyle={{ color: "#222222" }}>About</Link>
           </li>
+          {/* <li>
+            <Link to='/projects/' activeStyle={{ color: "#222222" }}>Projects</Link>
+          </li> */}
           <li>
-            <Link to='/projects/'>Projects</Link>
+            <Link to='/blog/' activeStyle={{ color: "#222222" }}>Blog</Link>
           </li>
-          <li>
-            <Link to='/blog/'>Blog</Link>
-          </li>
-          <li>
-            <Link to='/contact/'>Contact</Link>
-          </li>
+          {/* <li>
+            <Link to='/contact/' activeStyle={{ color: "#222222" }}>Contact</Link>
+          </li> */}
         </ul>
       </nav>
     </div>

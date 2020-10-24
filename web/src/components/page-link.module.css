@@ -1,0 +1,91 @@
+@import '../styles/media-queries.css';
+
+.root {
+  @nest & .h5 {
+    font-size: var(--font-base-size);
+    letter-spacing: 1px;
+    line-height: var(--font-small-line-height);
+
+    margin-top: 25px;
+    margin-bottom: 0;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+  }
+
+  @nest & p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 70px;
+  }
+
+  @nest & a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    text-decoration: none;
+
+    @nest & .linkArrow {
+      margin-left: 0;
+      transition: margin-left 0.5s;
+    }
+
+    @media (hover: hover) {
+      @nest &:hover > .linkArrow {
+        margin-left: 5px;
+        transition: margin-left 0.2s;
+      }
+    }
+  }
+}
+
+.wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 1em;
+  display: grid;
+  grid-gap: 1.5rem;
+  margin-bottom: 3em;
+
+  @media (--media-min-small) {
+    max-width: 1176px;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 3em 0;
+    margin-bottom: 6em;
+  }
+
+  @nest & div {
+    &:nth-child(1) {
+      align-self: center;
+
+      @media (--media-min-small) {
+        grid-column-start: 3;
+        grid-column-end: 6;
+      }
+    }
+
+    &:nth-child(2) {
+      position: relative;
+      padding-bottom: calc(5 / 4 * 100%);
+      grid-row-start: 1;
+
+      @media (--media-min-small) {
+        grid-column-start: 7;
+        grid-column-end: 11;
+      }
+
+      & img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

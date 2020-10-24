@@ -1,6 +1,7 @@
 import React from 'react'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
+import BlockContent from './block-content'
 
 import styles from './role-list.module.css'
 
@@ -30,8 +31,13 @@ function RoleList ({ items, title }) {
               </div>
             </div>
             <div>
-              <div>
-                <strong>{(item.person && item.person.name) || <em>Missing</em>}</strong>
+              <div className={styles.bio}>
+                <div>
+                  <strong>{(item.person && item.person.name) || <em>Missing</em>}</strong>
+                </div>
+                {item.person._rawBio && (
+                  <BlockContent blocks={item.person._rawBio} />
+                )}
               </div>
               {item.roles && (
                 <div>

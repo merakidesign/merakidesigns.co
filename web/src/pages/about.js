@@ -7,15 +7,37 @@ import PeopleGrid from '../components/people-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
+import { imageUrlFor } from '../lib/image-url'
+import { buildImageObj } from '../lib/helpers'
+import PageLink from '../components/page-link'
 
 import { responsiveTitle1 } from '../components/typography.module.css'
+import styles from '../styles/pages/about.module.css'
 
 export const query = graphql`
   query AboutPageQuery {
     page: sanityPage(_id: { regex: "/(drafts.|)about/" }) {
       id
       title
+      mainImage {
+        asset {
+          _id
+        }
+        alt
+      }
       _rawBody
+    }
+    pagelink: sanityPageLink(name: {eq: "About"}) {
+      id
+      title
+      description
+      link
+      linkText
+      mainImage {
+        asset {
+          _id
+        }
+      }
     }
     people: allSanityPerson {
       edges {
@@ -46,6 +68,8 @@ const AboutPage = props => {
   }
 
   const page = data && data.page
+  const pagelink = data && data.pagelink
+  const mainImage = page.mainImage
   const personNodes =
     data && data.people && mapEdgesToNodes(data.people).filter(filterOutDocsWithoutSlugs)
 
@@ -59,9 +83,27 @@ const AboutPage = props => {
     <Layout>
       <SEO title={page.title} />
       <Container>
-        <h1 className={responsiveTitle1}>{page.title}</h1>
-        <BlockContent blocks={page._rawBody || []} />
-        {personNodes && personNodes.length > 0 && <PeopleGrid items={personNodes} title='People' />}
+        <div className={styles.root}>
+          <div className={styles.wrapper}>
+            {mainImage && mainImage.asset && (
+              <div className={styles.mainImage}>
+                <img
+                  src={imageUrlFor(buildImageObj(mainImage))
+                    .width(1200)
+                    .height(Math.floor((9 / 16) * 1200))
+                    .fit('crop')
+                    .url()}
+                  alt={mainImage.alt}
+                />
+              </div>
+            )}
+            <div className={styles.mainContent}>
+              <BlockContent blocks={page._rawBody || []} />
+            </div>
+            {personNodes && personNodes.length > 0 && <PeopleGrid items={personNodes} title='People' />}
+          </div>
+        </div>
+        <PageLink {...pagelink}></PageLink>
       </Container>
     </Layout>
   )

@@ -1,0 +1,62 @@
+@import '../styles/media-queries.css';
+
+.root {
+  background-color: #F9F9F9;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: grid;
+  /* grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line]; */
+  grid-gap: 1.5rem;
+  margin-bottom: 100px;
+
+  @media (--media-min-small) {
+    max-width: 1176px;
+    padding: 0;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 250px;
+
+    @nest & .subgrid {
+      display: grid;
+      grid-column-start: 2;
+      grid-column-end: 12;
+      grid-template-rows: 50%
+    }
+  }
+
+  @nest & .box {
+    background-color: #ffffff;
+    padding: 50px 60px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    grid-row-start: 2;
+
+    @media (--media-min-small) {
+      padding: 80px 100px;
+    }
+  }
+
+  @nest & h4 {
+    font-family: Moderat Trial;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 44px;
+    /* or 137% */
+    letter-spacing: -0.5px;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  @nest & a {
+    margin-top: 15px;
+    font-family: Moderat Trial;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    text-decoration: none;
+  }
+}

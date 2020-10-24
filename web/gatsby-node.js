@@ -83,3 +83,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPostPages(graphql, actions, reporter)
   await createProjectPages(graphql, actions, reporter)
 }
+
+const pathsToIgnore = ['/contact/', '/projects/']
+
+exports.onCreatePage = ({ page, actions }) => {
+  // if (process.env.NODE_ENV === 'development') return
+  if (pathsToIgnore.includes(page.path)) {
+    const { deletePage } = actions
+    deletePage(page)
+  }
+}

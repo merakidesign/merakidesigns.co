@@ -1,0 +1,27 @@
+@import '../styles/media-queries.css';
+
+.root {
+  /* background-color:#F9F9F9; */
+}
+
+.wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1176px;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1.5rem;
+
+  @media (--media-min-small) {
+    padding: 3em 0;
+  }
+}
+
+.carousel {
+  /* color: yellow; */
+  /* border: 1px solid #6B6B6B; */
+  grid-column-start: 5;
+  grid-column-end: 12;
+  /* grid-row-start: 1; */
+}

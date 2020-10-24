@@ -6,36 +6,32 @@ import styles from './layout.module.css'
 
 const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitle }) => (
   <>
-    <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
-    <div className={styles.content}>{children}</div>
-    <footer className={styles.footer}>
-      <div className={styles.footerWrapper}>
-        <div className={styles.companyAddress}>
-          {companyInfo && (
-            <div>
-              {companyInfo.name}
-              <br />
-              {companyInfo.address1}
-              <br />
-              {companyInfo.address2 && (
-                <span>
-                  {companyInfo.address2}
-                  <br />
-                </span>
-              )}
-              {companyInfo.zipCode} {companyInfo.city}
-              {companyInfo.country && <span>, {companyInfo.country}</span>}
+    <div className={styles.content}>
+      <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
+      <div>{children}</div>
+      <footer className={styles.footer}>
+        <div className={styles.footerWrapper}>
+          <div className={styles.hello}>
+            <h4>Say hello.</h4>
+            <p>hello@merakidesigns.co</p>
+          </div>
+          <div className={styles.socialMedia}>
+            <div className={styles.social}>
+              <h4>We’re pretty social</h4>
             </div>
-          )}
+            <a href="#">Facebook</a>
+            <a href="#">Behance</a>
+            <a href="#">Instagram</a>
+            <a href="#">Dribbble</a>
+            <a href="#">Medium</a>
+            <a href="#">Github</a>
+          </div>
+          <div className={styles.copyright}>
+            <p>All Rights Reserved @ MerakiDesigns</p>
+          </div>
         </div>
-
-        <div className={styles.siteInfo}>
-          © {new Date().getFullYear()}, Built with <a href='https://www.sanity.io'>Sanity</a> &amp;
-          {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </>
 )
 

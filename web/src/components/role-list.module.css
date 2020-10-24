@@ -1,8 +1,10 @@
 @import '../styles/vars.css';
 
 .root {
-  margin: 2rem 0 3rem;
-  border-top: 1px solid var(--color-black);
+  margin: 6rem 0 3rem;
+  /* border-top: 1px solid var(--color-black); */
+  border-top: 1px solid #979797;
+  padding-top: 3rem;
 }
 
 .headline {
@@ -42,5 +44,23 @@
     height: 100%;
     vertical-align: top;
     object-fit: cover;
+  }
+}
+
+.bio {
+  @nest & p {
+    margin: 5px 0 0 0;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  @nest & strong {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1.3125px;
+    text-transform: uppercase;
+    color: #6B6B6B;
   }
 }

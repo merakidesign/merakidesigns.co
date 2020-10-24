@@ -8,6 +8,10 @@ import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from '../components/hero'
+import Services from '../components/services'
+import Cta from '../components/cta'
+import PageLink from '../components/page-link'
+import ProjectSlider from '../components/project-slider'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -15,6 +19,19 @@ export const query = graphql`
       title
       description
       keywords
+    }
+
+    pagelink: sanityPageLink(link: {regex: "/about/"}) {
+      id
+      title
+      description
+      link
+      linkText
+      mainImage {
+        asset {
+          _id
+        }
+      }
     }
 
     projects: allSanityProject(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
@@ -80,6 +97,9 @@ export const query = graphql`
             alt
           }
           title
+          categories {
+            title
+          }
           _rawExcerpt
           slug {
             current
@@ -108,6 +128,7 @@ const IndexPage = props => {
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
     : []
+  const pagelink = data.pagelink
 
   if (!site) {
     throw new Error(
@@ -121,18 +142,24 @@ const IndexPage = props => {
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
         <Hero></Hero>
+        {postNodes && (
+          <BlogPostPreviewGrid nodes={postNodes} />
+        )}
+        <Services></Services>
+        <Cta></Cta>
+        <PageLink {...pagelink}></PageLink>
+
+        {/* {postNodes && (
+          <ProjectSlider
+            nodes={postNodes}
+          ></ProjectSlider>
+        )} */}
+        
         {/* {projectNodes && (
           <ProjectPreviewGrid
             title='Latest projects'
             nodes={projectNodes}
             browseMoreHref='/projects/'
-          />
-        )} */}
-        {/* {postNodes && (
-          <BlogPostPreviewGrid
-            title='Latest blog posts'
-            nodes={postNodes}
-            browseMoreHref='/blog/'
           />
         )} */}
       </Container>
