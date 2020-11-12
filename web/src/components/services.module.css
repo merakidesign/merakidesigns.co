@@ -6,7 +6,7 @@
 
   @media (--media-min-small) {
     padding-top: 150px;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
   }
 
   @media (--media-max-small) {
@@ -21,33 +21,33 @@
     margin-bottom: 0;
 
     font-weight: 500;
-    font-size: 24px;
-    line-height: 32px;
-    /* or 133% */
+    font-size: 16px;
+    line-height: 1.6;
     letter-spacing: -0.5px;
+
+    @media (--media-min-small) {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
 
   @nest & p {
     margin-top: 5px;
     font-weight: 300;
-    font-size: 16px;
-    line-height: 28px;
-    /* or 175% */
+    font-size: 12px;
+    line-height: 1.6;
+    
+    @media (--media-min-small) {
+      font-size: 16px;
+      line-height: 28px;
+    }
   }
 }
 
 .wrapper {
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 1em;
-  display: grid;
-  grid-gap: 1.5rem;
-  justify-items: center;
+  composes: wrapper from './layout.module.css';
   
   @media (--media-min-small) {
-    max-width: 1176px;
-    grid-template-columns: repeat(12, 1fr);
-    padding: 3em 0;
     padding: 0;
     
     @nest & div {
@@ -72,19 +72,25 @@
 .number {
   display: inline-flex;
   border: 1px solid #979797;
-  height: 48px;
-  width: 48px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
 
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  /* identical to box height, or 150% */
+  font-size: 11px;
+  line-height: 1.6;
 
   letter-spacing: 1.5px;
   text-transform: uppercase;
 
   color: #6B6B6B;
+
+  @media (--media-min-small) {
+    height: 48px;
+    width: 48px;
+    font-size: 16px;
+    line-height: 24px;
+  }
 }

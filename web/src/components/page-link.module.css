@@ -10,50 +10,49 @@
     margin-bottom: 0;
 
     font-weight: 500;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 1.6;
     letter-spacing: -0.5px;
+
+    @media (--media-min-small) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    @media (--media-max-small) {
+      padding-right: 2rem; 
+    }
   }
 
   @nest & p {
     font-weight: 300;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 12px;
+    line-height: 1.6;
     margin-bottom: 70px;
-  }
 
-  @nest & a {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    color: #000000;
-    text-decoration: none;
-
-    @nest & .linkArrow {
-      margin-left: 0;
-      transition: margin-left 0.5s;
+    @media (--media-min-small) {
+      font-size: 16px;
+      line-height: 28px;
     }
 
-    @media (hover: hover) {
-      @nest &:hover > .linkArrow {
-        margin-left: 5px;
-        transition: margin-left 0.2s;
-      }
+    @media (--media-max-small) {
+      padding-right: 2rem; 
     }
   }
 }
 
 .wrapper {
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 1em;
-  display: grid;
-  grid-gap: 1.5rem;
   margin-bottom: 3em;
 
+  composes: wrapper from './layout.module.css';
+
   @media (--media-min-small) {
-    max-width: 1176px;
+    max-width: 90%;
     grid-template-columns: repeat(12, 1fr);
+  }
+
+  @media (--media-min-xlarge) {
+    max-width: 1176px;
     padding: 3em 0;
     margin-bottom: 6em;
   }
@@ -62,7 +61,12 @@
     &:nth-child(1) {
       align-self: center;
 
-      @media (--media-min-small) {
+      @media (--media-min-medium) {
+        grid-column-start: 1;
+        grid-column-end: 6;
+      }
+
+      @media (--media-min-xlarge) {
         grid-column-start: 3;
         grid-column-end: 6;
       }
@@ -73,7 +77,12 @@
       padding-bottom: calc(5 / 4 * 100%);
       grid-row-start: 1;
 
-      @media (--media-min-small) {
+      @media (--media-min-medium) {
+        grid-column-start: 7;
+        grid-column-end: 13;
+      }
+
+      @media (--media-min-xlarge) {
         grid-column-start: 7;
         grid-column-end: 11;
       }

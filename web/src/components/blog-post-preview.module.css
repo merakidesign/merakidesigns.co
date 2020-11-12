@@ -1,3 +1,5 @@
+@import '../styles/media-queries.css';
+
 .root {
   display: block;
   color: inherit;
@@ -23,34 +25,37 @@
 .title {
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 1.6;
   letter-spacing: -0.5px;
   color: #000000;
+  margin-top: 3px;
   margin-bottom: 3px;
-  margin-top: 15px;
 
-  @media (hover: hover) {
-    @nest .root:hover & {
-      text-decoration: underline;
-    }
+  @media (--media-min-small) {
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 15px;
   }
 }
 
 .articleDetails {
   padding: 30px;
-  min-height: 160px;
 }
 
 .excerpt {
   @nest & p {
     margin: 0;
-    font-family: Moderat Trial;
     font-style: normal;
     font-weight: 300;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 12px;
+    line-height: 1.6;
     color: #000000;
+
+    @media (--media-min-small) {
+      font-size: 16px;
+      line-height: 28px;
+    }
   }
 
   @nest & strong {
@@ -64,12 +69,17 @@
 
   @nest & li {
     font-weight: 400;
-    font-size: 12px;
-    line-height: 24px;
+    font-size: 11px;
+    line-height: 1.6;
     letter-spacing: 1.3125px;
     text-transform: uppercase;
     color: #6B6B6B;
     display: inline;
+  }
+
+  @media (--media-min-small) {
+    font-size: 12px;
+    line-height: 24px;
   }
 
   @nest & :not(:last-child)::after {

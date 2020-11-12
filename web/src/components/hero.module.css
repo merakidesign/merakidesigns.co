@@ -13,9 +13,14 @@
     line-height: var(--font-title1-line-height);
     margin-top: 0;
     font-weight: 300;
-    font-size: 32px;
-    line-height: 44px;
+    font-size: 16px;
+    line-height: 1.6;
     letter-spacing: -0.5px;
+
+    @media (--media-min-small) {
+      font-size: 32px;
+      line-height: 44px; 
+    }
   }
 
   @nest & h6, & .h6 {
@@ -24,22 +29,20 @@
     letter-spacing: 1px;
     line-height: var(--font-small-line-height);
     text-transform: uppercase;
-
     font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    /* identical to box height, or 150% */
+    font-size: 11px;
+    line-height: 1.6;
     letter-spacing: 1.5px;
+
+    @media (--media-min-small) {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 }
 
 .wrapper {
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 1em;
-  display: grid;
-  
-  grid-gap: 1.5rem;
+  composes: wrapper from './layout.module.css';
 
   @media (--media-min-small) {
     padding: 3em 0;

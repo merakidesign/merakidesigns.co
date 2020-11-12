@@ -51,16 +51,26 @@
   @nest & p {
     margin: 5px 0 0 0;
     font-weight: 300;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 12px!important;
+    line-height: 1.6!important;
+
+    @media (--media-min-small) {
+      font-size: 16px;
+      line-height: 28px;
+    }
   }
 
   @nest & strong {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 11px;
+    line-height: 1.6;
     letter-spacing: 1.3125px;
     text-transform: uppercase;
     color: #6B6B6B;
+
+    @media (--media-min-small) {
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 }

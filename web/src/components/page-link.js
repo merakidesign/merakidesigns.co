@@ -1,7 +1,7 @@
-import { Link } from 'gatsby'
 import React from 'react'
 import { imageUrlFor } from '../lib/image-url'
 import { buildImageObj } from '../lib/helpers'
+import ArrowLink from './arrow-link'
 
 import styles from './page-link.module.css'
 
@@ -17,7 +17,7 @@ const PageLink = (props) => {
             {props.description}
           </p>
           {props.link && (
-            <Link to={props.link}>{props.linkText} <span className={styles.linkArrow}>&rarr;</span></Link>
+            <ArrowLink link={props.link} linkText={props.linkText}></ArrowLink>
           )} 
         </div>
         <div>

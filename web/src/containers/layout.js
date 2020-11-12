@@ -14,6 +14,12 @@ const query = graphql`
       zipCode
       city
       country
+      facebook
+      instagram
+      medium
+      behance
+      github
+      dribbble
     }
   }
 `

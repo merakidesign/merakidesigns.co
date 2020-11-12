@@ -18,6 +18,15 @@ module.exports = {
         watchMode: true,
         overlayDrafts: true
       }
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: ['DM Sans'],
+          urls: ['/fonts/fonts.css']
+        }
+      }
     }
   ]
 }

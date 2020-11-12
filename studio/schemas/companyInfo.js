@@ -42,6 +42,36 @@ export default {
       name: 'country',
       title: 'Country',
       type: 'string'
+    },
+    {
+      name: 'facebook',
+      title: 'Facebook',
+      type: 'string'
+    },
+    {
+      name: 'instagram',
+      title: 'Instagram',
+      type: 'string'
+    },
+    {
+      name: 'medium',
+      title: 'Medium',
+      type: 'string'
+    },
+    {
+      name: 'behance',
+      title: 'Behance',
+      type: 'string'
+    },
+    {
+      name: 'github',
+      title: 'GitHub',
+      type: 'string'
+    },
+    {
+      name: 'dribbble',
+      title: 'Dribbble',
+      type: 'string'
     }
   ]
 }

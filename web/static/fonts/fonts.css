@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('DMSans-Bold.ttf'); /* IE9 Compat Modes */
+  src: url('DMSans-Bold.tff?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('DMSans-Bold.ttf') format('truetype'), /* Pretty Modern Browsers */
+       url('DMSans-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('DMSans-Medium.ttf'); /* IE9 Compat Modes */
+  src: url('DMSans-Medium.tff?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('DMSans-Medium.ttf') format('truetype'), /* Pretty Modern Browsers */
+       url('DMSans-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('DMSans-Regular.ttf'); /* IE9 Compat Modes */
+  src: url('DMSans-Regular.tff?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('DMSans-Regular.ttf') format('truetype'), /* Pretty Modern Browsers */
+       url('DMSans-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}

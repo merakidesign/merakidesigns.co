@@ -104,6 +104,7 @@ export const query = graphql`
           }
           title
           categories {
+            _id
             title
           }
           _rawExcerpt

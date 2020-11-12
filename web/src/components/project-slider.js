@@ -16,7 +16,8 @@ function ProjectSlider (props) {
           naturalSlideHeight={5}
           totalSlides={3}
           visibleSlides={3}
-          // infinite={1}
+          infinite={1}
+          isIntrinsicHeight
         >
           <Slider>
             {props.nodes &&

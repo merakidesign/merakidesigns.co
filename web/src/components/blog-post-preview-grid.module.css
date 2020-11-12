@@ -7,6 +7,11 @@
   padding-bottom: 4em;
   width: 100%;
   background: -webkit-linear-gradient(90deg, #F9F9F9 66%, #FFFFFF 66%);
+
+  @media (--media-max-small) {
+    background: #F9F9F9;
+    padding-top: 1rem;
+  }
 }
 
 .headline {
@@ -21,13 +26,11 @@
 }
 
 .wrapper {
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1176px;
-  padding: 1em;
-
+  composes: wrapper from './layout.module.css';
+  
   @media (--media-min-small) {
     padding: 0;
+    display: block;
   }
 }
 
@@ -62,6 +65,18 @@
     @nest & .grid-item:first-of-type {
       grid-column: 3/span 4;
     } 
+  }
+}
+
+.homeSlider {
+  @media (--media-max-small) {
+    overflow-x: scroll;
+
+    @nest & .grid {
+      grid-template-columns: repeat(12, 1fr);
+      width: 250%;
+      padding-right: 2em;
+    }
   }
 }
 

@@ -43,7 +43,7 @@ function BlogPost (props) {
           <aside className={styles.metaContent}>
             {categories && (
               <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Article tags</h3>
+                <p className={styles.categoriesHeadline}>Article tags</p>
                 <ul>
                   {categories.map(category => (
                     <li key={category._id}>{category.title}</li>
@@ -53,7 +53,7 @@ function BlogPost (props) {
             )}
             {publishedAt && (
               <div className={styles.publishedAt}>
-                <h3>Published at</h3>
+                <p>Published at</p>
                 <span>
                   {differenceInDays(new Date(publishedAt), new Date()) > 3
                     ? distanceInWords(new Date(publishedAt), new Date())

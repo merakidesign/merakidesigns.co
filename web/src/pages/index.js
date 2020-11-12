@@ -34,7 +34,7 @@ export const query = graphql`
       }
     }
 
-    projects: allSanityProject(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
+    projects: allSanityProject(limit: 3, sort: { fields: [publishedAt], order: DESC }) {
       edges {
         node {
           id
@@ -98,6 +98,7 @@ export const query = graphql`
           }
           title
           categories {
+            _id
             title
           }
           _rawExcerpt
@@ -139,30 +140,28 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
-        <Hero></Hero>
-        {postNodes && (
-          <BlogPostPreviewGrid nodes={postNodes} />
-        )}
-        <Services></Services>
-        <Cta></Cta>
-        <PageLink {...pagelink}></PageLink>
-
-        {/* {postNodes && (
-          <ProjectSlider
-            nodes={postNodes}
-          ></ProjectSlider>
-        )} */}
-        
-        {/* {projectNodes && (
-          <ProjectPreviewGrid
-            title='Latest projects'
-            nodes={projectNodes}
-            browseMoreHref='/projects/'
-          />
-        )} */}
-      </Container>
+        <Container>
+          <h1 hidden>Welcome to {site.title}</h1>
+          <Hero></Hero>
+          {postNodes && (
+            <BlogPostPreviewGrid homeSlider nodes={postNodes} />
+          )}
+          {/* {postNodes && (
+            <ProjectSlider
+              nodes={postNodes}
+            ></ProjectSlider>
+          )} */}
+          <Services></Services>
+          <Cta></Cta>
+          <PageLink {...pagelink}></PageLink>
+          {/* {projectNodes && (
+            <ProjectPreviewGrid
+              title='Latest projects'
+              nodes={projectNodes}
+              browseMoreHref='/projects/'
+            />
+          )} */}
+        </Container>
     </Layout>
   )
 }

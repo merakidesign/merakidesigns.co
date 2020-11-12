@@ -19,12 +19,12 @@ const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitl
             <div className={styles.social}>
               <h4>We’re pretty social</h4>
             </div>
-            <a href="#">Facebook</a>
-            <a href="#">Behance</a>
-            <a href="#">Instagram</a>
-            <a href="#">Dribbble</a>
-            <a href="#">Medium</a>
-            <a href="#">Github</a>
+            <a href={companyInfo.facebook}>Facebook</a>
+            <a href={companyInfo.behance}>Behance</a>
+            <a href={companyInfo.instagram}>Instagram</a>
+            <a href={companyInfo.medium}>Medium</a>
+            <a href={companyInfo.github}>Github</a>
+            <a href={companyInfo.dribbble}>Dribbble</a>
           </div>
           <div className={styles.copyright}>
             <p>All Rights Reserved @ MerakiDesigns</p>

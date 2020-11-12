@@ -21,7 +21,7 @@
 .carousel {
   /* color: yellow; */
   /* border: 1px solid #6B6B6B; */
-  grid-column-start: 5;
-  grid-column-end: 12;
+  grid-column-start: 3;
+  grid-column-end: 13;
   /* grid-row-start: 1; */
 }
