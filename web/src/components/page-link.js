@@ -24,8 +24,8 @@ const PageLink = (props) => {
           {props.mainImage && props.mainImage.asset && (
             <img
               src={imageUrlFor(buildImageObj(props.mainImage))
-                .width(600)
-                .height(Math.floor((5 / 4) * 600))
+                .width(1000)
+                .height(Math.floor((5 / 4) * 1000))
                 .url()}
               alt={props.mainImage.alt}
             />
