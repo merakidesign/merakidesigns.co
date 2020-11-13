@@ -14,6 +14,8 @@ const query = graphql`
       zipCode
       city
       country
+    }
+    socialMediaLinks: sanitySocialMediaLinks(_id: { regex: "/(drafts.|)socialMediaLinks/"}) {
       facebook
       instagram
       medium
@@ -51,6 +53,7 @@ function LayoutContainer (props) {
             {...props}
             showNav={showNav}
             companyInfo={data.companyInfo}
+            socialMediaLinks={data.socialMediaLinks}
             siteTitle={data.site.title}
             onHideNav={handleHideNav}
             onShowNav={handleShowNav}

@@ -20,6 +20,7 @@ import projectMember from './projectMember'
 import siteSettings from './siteSettings'
 import slideshow from './slideshow'
 import pageLink from './pageLink'
+import socialMediaLinks from './socialMediaLinks'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -34,6 +35,7 @@ export default createSchema({
     blockText,
     category,
     companyInfo,
+    socialMediaLinks,
     figure,
     mainImage,
     page,

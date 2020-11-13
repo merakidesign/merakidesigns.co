@@ -4,7 +4,7 @@ import Header from './header'
 import '../styles/layout.css'
 import styles from './layout.module.css'
 
-const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitle }) => (
+const Layout = ({ children, socialMediaLinks, onHideNav, onShowNav, showNav, siteTitle }) => (
   <>
     <div className={styles.content}>
       <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
@@ -19,12 +19,15 @@ const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitl
             <div className={styles.social}>
               <h4>We’re pretty social</h4>
             </div>
-            <a href="#">Facebook</a>
-            <a href="#">Behance</a>
-            <a href="#">Instagram</a>
-            <a href="#">Medium</a>
-            <a href="#">Github</a>
-            <a href="#">Dribbble</a>
+            {socialMediaLinks &&
+              Object.entries(socialMediaLinks)
+                .filter(([name, href]) => href !== null)
+                .map(
+                  ([name, href], index) => {
+                    return <a className={styles.socialMediaLink} key={index} href={href} target='_blank'>{name}</a>
+                  }
+                )
+            }
           </div>
           <div className={styles.copyright}>
             <p>All Rights Reserved @ MerakiDesigns</p>

@@ -1,46 +1,41 @@
-import { MdBusiness } from 'react-icons/md'
+import { MdLink } from 'react-icons/md'
 
 export default {
-  name: 'companyInfo',
-  title: 'Company Info',
+  name: 'socialMediaLinks',
+  title: 'Social Media Links',
   type: 'document',
   // You probably want to uncomment the next line once you've made a companyInfo document in the Studio. This will remove the companyInfo document type from the create-menus.
   // __experimental_actions: ['update', 'publish', /* 'create', 'delete' */],
-  icon: MdBusiness,
+  icon: MdLink,
   fields: [
     {
-      name: 'name',
-      title: 'Company name',
+      name: 'facebook',
+      title: 'Facebook',
       type: 'string'
     },
     {
-      name: 'email',
-      title: 'Email',
-      type: 'email'
-    },
-    {
-      name: 'address1',
-      title: 'Address 1',
+      name: 'instagram',
+      title: 'Instagram',
       type: 'string'
     },
     {
-      name: 'address2',
-      title: 'Address 2',
+      name: 'medium',
+      title: 'Medium',
       type: 'string'
     },
     {
-      name: 'zipCode',
-      title: 'ZIP Code',
+      name: 'behance',
+      title: 'Behance',
       type: 'string'
     },
     {
-      name: 'city',
-      title: 'City',
+      name: 'github',
+      title: 'GitHub',
       type: 'string'
     },
     {
-      name: 'country',
-      title: 'Country',
+      name: 'dribbble',
+      title: 'Dribbble',
       type: 'string'
     }
   ]
